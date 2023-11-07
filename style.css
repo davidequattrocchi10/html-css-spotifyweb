@@ -1,0 +1,187 @@
+/* Reset dei margini e dei padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Stile della sidebar */
+.sidebar {
+    width: 150px;
+    background-color: black;
+    color: white;
+    position: fixed;
+    height: 100%;
+    overflow: hidden; /* Impedisce il contenuto di uscire dalla sidebar */
+    transition: width 0.3s; /* Aggiunge una transizione animata per il cambiamento di larghezza */
+}
+
+/* Nasconde gli elementi con classe mobile-only quando la sidebar è superiore a 600px */
+@media screen and (min-width: 601px) {
+
+    li {
+        padding: 0px;
+    }
+
+    .mobile-only {
+        display: none;
+    }
+}
+
+/* Nasconde gli elementi con classe desktop-only quando la sidebar è inferiore a 600px */
+@media screen and (max-width: 600px) {
+
+    .sidebar{
+        width: 40px;
+    }
+    
+    .desktop-only {
+        visibility: hidden;
+    }
+}
+
+.desktop-only{
+    margin: 9px 0px 9px 15px;
+}
+
+.mobile-only{
+    margin: 8px;
+}
+
+.logo {
+    padding-top: 10px;
+    font-size: 20px;
+}
+
+.logo img {
+    width: 100px;
+    height: auto; /* Altezza automatica per mantenere l'aspetto proporzionato */
+}
+
+
+/* Stile per il menu nella sidebar */
+.menu {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+}
+
+.menu li {
+    font-size: 14px;
+}
+
+.menu a {
+    color: grey;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s; /* Transizione del colore al passaggio del mouse */
+}
+
+/* Cambia il colore del testo al passaggio del mouse */
+.menu a:hover {
+    color: #fff;
+}
+
+.menu a img {
+    background-color: black;
+    width: 20px; 
+    height: 20px; 
+    margin-right: 10px; /* Spaziatura tra l'immagine e il testo */
+}
+
+/* Stile per "Crea Playlist" */
+.icon {
+    width: 30px;
+    height: 30px;
+    background-color: grey;
+    font-size: 35px; 
+    font-weight: bold;
+    color: #000; 
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Stile del contenuto e della prima sezione */
+.content {
+    margin-left: 10%; 
+    overflow-y: auto;
+}
+
+header {
+    background-color: #110e0e;
+    height: 10vh;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center; 
+}
+
+.container_button{
+    text-align: right;
+}
+.upgrade{
+    background-color: #141414;
+    color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    padding: 1vh 2vh;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.upgrade:hover {
+    transform: scale(1.05); /* Ingrandisce del 5% */
+}
+
+/* Stile seconda sezione */
+.container_section2{
+    background-color: #1f1c2d;
+    height: 10vh;
+
+}
+.list {
+    background-color: #1f1c2d;
+    list-style: none;
+    padding: 1rem 0rem;
+    display: flex;
+    justify-content: center;
+}
+
+.list li {
+    margin-right: 20px;
+    font-size: 14px; 
+}
+
+.list li a {
+    text-decoration: none;
+    color: #777; 
+    transition: color 0.3s; 
+}
+
+.list li:hover a {
+    color: #fff; /* Cambia il colore a bianco al passaggio del mouse */
+}
+
+/* Stile per la sottolineatura verde */
+.sottolineatura{
+    text-decoration: underline;
+    text-decoration-color: green; /* Colore verde */
+}
+
+
+
+/* Footer */
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+
