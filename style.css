@@ -38,6 +38,10 @@
     .desktop-only {
         visibility: hidden;
     }
+
+    .content{
+        margin-left: 40px !important;
+    }
 }
 
 .desktop-only{
@@ -107,12 +111,12 @@
 
 /* Stile del contenuto e della prima sezione - header */
 .content {
-    margin-left: 10%; 
-    overflow-y: auto;
+    margin-left: 150px; 
+    height: 100%;
 }
 
 header {
-    background-color: #110e0e;
+    background-color: #0b0d15;
     height: 70px;
     display: flex;
     justify-content: flex-end; 
@@ -139,26 +143,27 @@ header {
 
 /* Stile seconda sezione */
 .container_section2{
-    background-color: #1f1c2d;
-    height: 10vh;
+    background-color: #1d2133;
 
 }
 .list {
-    background-color: #1f1c2d;
+    background-color: #1d2133;
     list-style: none;
     padding: 1rem 0rem;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .list li {
     margin-right: 20px;
-    font-size: 14px; 
+    font-size: 10px;
+    font-family:Georgia, 'Times New Roman', Times, serif
 }
 
 .list li a {
     text-decoration: none;
-    color: #777; 
+    color: #9b9a9af2; 
     transition: color 0.3s; 
 }
 
@@ -169,10 +174,16 @@ header {
 /* Stile per la sottolineatura verde */
 .sottolineatura{
     text-decoration: underline;
-    text-decoration-color: green; /* Colore verde */
+    text-decoration-color: #3fef3f; /* Colore verde */
+    text-decoration-thickness: 2px;
 }
 
+/* Stile terza sezione */
+.section{
+    background-color: #1d2133;
+    height: 10vh;
 
+}
 
 /* Footer */
 footer {
