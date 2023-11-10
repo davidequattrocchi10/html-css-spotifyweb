@@ -7,7 +7,6 @@
 
 /* Stile della sidebar */
 .sidebar {
-    width: 150px;
     background-color: black;
     color: white;
     position: fixed;
@@ -19,12 +18,20 @@
 /* Nasconde gli elementi con classe mobile-only quando la sidebar è superiore a 600px */
 @media screen and (min-width: 601px) {
 
+    .sidebar{
+        width: 150px;
+    }
+
     li {
         padding: 0px;
     }
 
     .mobile-only {
         display: none;
+    }
+
+    .content{
+        margin-left: 150px;
     }
 }
 
@@ -40,7 +47,7 @@
     }
 
     .content{
-        margin-left: 40px !important;
+        margin-left: 40px;
     }
 }
 
@@ -109,12 +116,12 @@
 }
 
 
-/* Stile del contenuto e della prima sezione - header */
+/* Stile del contenuto */
 .content {
-    margin-left: 150px; 
     height: 100%;
 }
 
+/* Stile della prima sezione - header */
 header {
     background-color: #0b0d15;
     height: 70px;
@@ -141,7 +148,7 @@ header {
     transform: scale(1.05); /* Ingrandisce del 5% */
 }
 
-/* Stile seconda sezione */
+/* Stile della seconda sezione */
 .container_section2{
     background-color: #1d2133;
 
@@ -156,7 +163,7 @@ header {
 }
 
 .list li {
-    margin-right: 20px;
+    margin: 15px;
     font-size: 10px;
     font-family:Georgia, 'Times New Roman', Times, serif
 }
@@ -174,16 +181,75 @@ header {
 /* Stile per la sottolineatura verde */
 .sottolineatura{
     text-decoration: underline;
-    text-decoration-color: #3fef3f; /* Colore verde */
+    text-decoration-color: #3fef3f; 
     text-decoration-thickness: 2px;
 }
 
-/* Stile terza sezione */
+/* Stile varie sezioni */
 .section{
     background-color: #1d2133;
-    height: 10vh;
+}
+
+.section h3{
+    padding: 1rem 20px;
+    color: white;
+    font-size: larger;
+}
+
+/* Stile per il contenitore delle immagini */
+.recently-played-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 15px;
+}
+
+/* Stile per ogni singola immagine e titolo */
+.recently-played-item {
+    flex: 0 0 calc(16.66%); /* Occupa 1/6 della larghezza*/
+    text-align: center;
+}
+
+
+/* Stile per le immagini quando la larghezza della pagina è minore di 650px */
+@media screen and (max-width: 650px) {
+    .recently-played-item {
+        flex: 0 0 calc(50%); 
+    }
 
 }
+
+/* Stile per le immagini quando la larghezza della pagina è compresa fra 651 e 900px */
+@media screen and (min-width: 651px) and (max-width: 900px) {
+    .recently-played-item {
+        flex: 0 0 calc(25%); 
+    }
+}
+
+
+.recently-played-item img {
+    max-width: 100%; /* Immagini si ridimensionano proporzionalmente */
+    height: auto;
+    max-height: 200px;
+}
+
+.recently-played-item h6 {
+    color: white;
+    font-weight: bold;
+    font-size: smaller;
+
+}
+
+.recently-played-item p {
+    color: #9b9a9af2;
+    font-size:small;
+}                                                                                                                                                                                                                         
+
+
+
+
+
+
+
 
 /* Footer */
 footer {
