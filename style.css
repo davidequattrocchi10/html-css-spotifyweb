@@ -165,7 +165,7 @@ header {
 .list li {
     margin: 15px;
     font-size: 10px;
-    font-family:Georgia, 'Times New Roman', Times, serif
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 .list li a {
@@ -191,7 +191,7 @@ header {
 }
 
 .section h3{
-    padding: 1rem 20px;
+    padding: 1rem 25px;
     color: white;
     font-size: larger;
 }
@@ -207,6 +207,8 @@ header {
 .recently-played-item {
     flex: 0 0 calc(16.66%); /* Occupa 1/6 della larghezza*/
     text-align: center;
+    position: relative;
+    overflow: hidden;
 }
 
 
@@ -226,16 +228,61 @@ header {
 }
 
 
+
 .recently-played-item img {
     max-width: 100%; /* Immagini si ridimensionano proporzionalmente */
     height: auto;
     max-height: 200px;
+    transition: filter 0.3s;
+}
+
+
+.play-overlay {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    color: white; /* Colore del simbolo ▶ */
+    transition: opacity 0.3s; /* Aggiungi transizione per l'opacità */
+}
+
+.play-overlay::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 5px solid white;
+}
+
+.play-overlay::after {
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 0 15px 30px; /* Dimensioni del triangolo */
+    border-color: transparent transparent transparent white; /* Colore del triangolo */
+    position: absolute;
+    top: 50%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.recently-played-item:hover img {
+    filter: brightness(65%); /* Scurisce l'immagine al passaggio del mouse */
+}
+
+.recently-played-item:hover .play-overlay {
+    opacity: 1; /* Mostra l'overlay al passaggio del mouse */
 }
 
 .recently-played-item h6 {
     color: white;
     font-weight: bold;
-    font-size: smaller;
+    font-size: 15px;
+    padding: 10px;
 
 }
 
@@ -244,12 +291,20 @@ header {
     font-size:small;
 }                                                                                                                                                                                                                         
 
+.suggestions {
+    color: #9b9a9af2;
+    font-size:small;
+    padding: 0px 0px 25px 25px;
+}  
 
+.circle-image {
+            border-radius: 50%; 
+        }
 
-
-
-
-
+.space{
+    height: 10rem;
+    background-color: #1d2133;
+}
 
 /* Footer */
 footer {
