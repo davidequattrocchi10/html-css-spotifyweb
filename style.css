@@ -49,6 +49,20 @@
     .content{
         margin-left: 40px;
     }
+
+    .menu .bottom-menu hr {
+        margin: 0px 52px 0px 6px;
+        color: grey;
+    }
+}
+
+/* Nasconde gli elementi con classe bottom-menu quando l'altezza è inferiore a 540px */
+@media screen and (max-height: 540px) {
+
+    .bottom-menu {
+        display: none;
+    }
+
 }
 
 .desktop-only{
@@ -98,7 +112,7 @@
     background-color: black;
     width: 20px; 
     height: 20px; 
-    margin-right: 10px; /* Spaziatura tra l'immagine e il testo */
+    margin-right: 12px; /* Spaziatura tra l'immagine e il testo */
 }
 
 /* Stile per "Crea Playlist" */
@@ -114,6 +128,37 @@
     align-items: center;
     justify-content: center;
 }
+
+/* Stile per il contenuto che deve andare in fondo alla sidebar */
+.bottom-menu {
+    margin-bottom: 35px;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* Stile per la linea orizzontale */
+.menu hr {
+    margin: 0 0 0 20px;
+    border-color: grey;
+}
+
+/* Modifica immagine profile */
+#img-profile{
+    border-radius: 50%; 
+    overflow: hidden; /* Assicura che l'immagine si adatti al bordo circolare */
+    background-color: grey;
+}
+
+.bottom-menu a:nth-child(1) {
+    font-size: 11px; /* Dimensione del testo per "Installa App" */
+}
+
+.bottom-menu a:nth-child(3) {
+    font-size: 15px; /* Dimensione del testo per "John Doe" */
+    color: white; 
+}
+
 
 
 /* Stile del contenuto */
@@ -305,6 +350,10 @@ header {
     height: 10rem;
     background-color: #1d2133;
 }
+
+
+
+
 
 /* Footer */
 footer {
