@@ -16,7 +16,7 @@
 }
 
 /* Nasconde gli elementi con classe mobile-only quando la sidebar è superiore a 600px */
-@media screen and (min-width: 601px) {
+@media screen and (min-width: 481px) {
 
     .sidebar{
         width: 150px;
@@ -36,7 +36,7 @@
 }
 
 /* Nasconde gli elementi con classe desktop-only quando la sidebar è inferiore a 600px */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 480px) {
 
     .sidebar{
         width: 40px;
@@ -101,6 +101,23 @@
     display: flex;
     align-items: center;
     transition: color 0.3s; /* Transizione del colore al passaggio del mouse */
+}
+
+/* Stile per la sottolineatura verde */
+.sottolineatura {
+    position: relative;
+    text-decoration: none;
+}
+
+.menu .sottolineatura::before {
+    content: "";
+    position: absolute;
+    left: -10px; /* Regola la distanza della sottolineatura dalla sinistra */
+    top: 20px;
+    transform: translateY(-50%);
+    width: 3px; /* Larghezza della sottolineatura */
+    height: 30px; /* Altezza della sottolineatura */
+    background-color: #3fef3f; /* Colore della sottolineatura */
 }
 
 /* Cambia il colore del testo al passaggio del mouse */
@@ -209,7 +226,7 @@ header {
 
 .list li {
     margin: 15px;
-    font-size: 10px;
+    font-size: 12px;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -224,10 +241,14 @@ header {
 }
 
 /* Stile per la sottolineatura verde */
-.sottolineatura{
-    text-decoration: underline;
-    text-decoration-color: #3fef3f; 
-    text-decoration-thickness: 2px;
+.list .sottolineatura::after {
+    content: "";
+    position: absolute;
+    left: 25px;
+    right: 25px;
+    bottom: -4px; /* Regola l'altezza della sottolineatura */
+    background-color: #3fef3f;
+    height: 2px; /* Spessore della sottolineatura */
 }
 
 /* Stile varie sezioni */
@@ -258,7 +279,7 @@ header {
 
 
 /* Stile per le immagini quando la larghezza della pagina è minore di 650px */
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 480px) {
     .recently-played-item {
         flex: 0 0 calc(50%); 
     }
@@ -266,7 +287,7 @@ header {
 }
 
 /* Stile per le immagini quando la larghezza della pagina è compresa fra 651 e 900px */
-@media screen and (min-width: 651px) and (max-width: 900px) {
+@media screen and (min-width: 481px) and (max-width: 768px) {
     .recently-played-item {
         flex: 0 0 calc(25%); 
     }
@@ -276,15 +297,19 @@ header {
 
 .recently-played-item img {
     max-width: 100%; /* Immagini si ridimensionano proporzionalmente */
-    height: auto;
-    max-height: 200px;
+    max-height: 100%;
     transition: filter 0.3s;
+    display: block;
 }
 
+.recently-played-item .image {
+    position: relative;
+    margin: 5px;
+}
 
-.play-overlay {
+.recently-played-item .play-overlay{
     position: absolute;
-    top: 40%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     opacity: 0;
@@ -292,7 +317,15 @@ header {
     transition: opacity 0.3s; /* Aggiungi transizione per l'opacità */
 }
 
-.play-overlay::before {
+.image:hover img {
+    filter: brightness(65%);
+}
+
+.image:hover .play-overlay {
+    opacity: 1;
+}
+
+.recently-played-item .play-overlay::before {
     content: "";
     display: block;
     width: 50px;
@@ -301,7 +334,7 @@ header {
     border: 5px solid white;
 }
 
-.play-overlay::after {
+.recently-played-item .play-overlay::after {
     content: "";
     display: block;
     width: 0;
@@ -313,14 +346,6 @@ header {
     top: 50%;
     left: 55%;
     transform: translate(-50%, -50%);
-}
-
-.recently-played-item:hover img {
-    filter: brightness(65%); /* Scurisce l'immagine al passaggio del mouse */
-}
-
-.recently-played-item:hover .play-overlay {
-    opacity: 1; /* Mostra l'overlay al passaggio del mouse */
 }
 
 .recently-played-item h6 {
